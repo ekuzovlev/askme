@@ -9,10 +9,16 @@ class User < ApplicationRecord
 
   has_many :questions
 
+  validates :username, length: { maximum: 40 }
+  validates :username, format: { with: /\A\w+\z/ }
+
   validates :email, :username, presence: true
   validates :email, :username, uniqueness: true
+
+  validates :email, format: { with: /.+@.+\..+/i }
+
   validates :password, presence: true, on: :create
-  validates_confirmation_of :password
+  validates :password, confirmation: true
 
   before_save :encrypt_password
 
