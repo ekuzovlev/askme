@@ -49,11 +49,11 @@ class User < ApplicationRecord
   private
 
   def downcase_username
-    self.username = self.username.downcase
+    self.username = username.downcase if username.present?
   end
 
   def downcase_email
-    self.email = self.email.downcase
+    self.email = email.downcase if username.present?
   end
 
   def encrypt_password
