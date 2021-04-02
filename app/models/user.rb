@@ -53,7 +53,7 @@ class User < ApplicationRecord
   end
 
   def downcase_email
-    self.email = email.downcase if username.present?
+    self.email = email.downcase if email.present?
   end
 
   def encrypt_password
