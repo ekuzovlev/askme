@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :questions
 
   before_validation :downcase_username, :downcase_email
+  before_save :encrypt_password
 
   validates :username,
             presence: true,
@@ -25,8 +26,6 @@ class User < ApplicationRecord
 
   validates :password, presence: true, on: :create
   validates :password, confirmation: true
-
-  before_save :encrypt_password
 
   def self.hash_to_string(password_hash)
     password_hash.unpack1('H*')
@@ -49,11 +48,11 @@ class User < ApplicationRecord
   private
 
   def downcase_username
-    self.username = username.downcase if username.present?
+    username&.downcase!
   end
 
   def downcase_email
-    self.email = email.downcase if email.present?
+    email&.downcase!
   end
 
   def encrypt_password
