@@ -205,6 +205,7 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   listen (~> 3.3)
+  mimemagic
   pg
   pry-rails
   puma (~> 5.0)

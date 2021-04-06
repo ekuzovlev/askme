@@ -29,6 +29,7 @@ gem 'turbolinks', '~> 5'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'uglifier'
+gem 'mimemagic', '~> 0.3.10'
 
 group :production do
   gem 'pg'
