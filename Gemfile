@@ -29,7 +29,7 @@ gem 'turbolinks', '~> 5'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'uglifier'
-gem 'mimemagic', '~> 0.3.10'
+gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
 
 group :production do
   gem 'pg'
