@@ -2,4 +2,17 @@ module ApplicationHelper
   def user_avatar(user)
     user.avatar_url || asset_pack_path('media/images/avatar.jpg')
   end
+
+  def incline(quantity, one, two, five)
+    case quantity % 100
+    when 11..14 then five
+    end
+
+    case quantity % 10
+    when 1 then one
+    when 2..4 then two
+    else five
+    end
+  end
+
 end

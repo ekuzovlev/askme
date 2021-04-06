@@ -43,3 +43,10 @@ a {
 .text-center {
   text-align: center;
 }
+
+.question-counter {
+  color: #999999;
+  font-size: 16px;
+  margin-bottom: 6px;
+  margin-top: -15px;
+}
