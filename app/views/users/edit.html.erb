@@ -47,8 +47,10 @@
         <%= f.password_field :password_confirmation, class: 'form-text-field' %>
       </div>
 
-      <div class="form-action buffer-top">
+      <div class="form-action buffer-top buttons-block">
         <%= f.submit 'Сохранить', class: 'button button-dark button-small' %>
+        <%= link_to 'Удалить профиль', user_path(@user), class: 'user-destroy-link',
+              method: :delete, data: { confirm: "Вы уверены?" } %>
       </div>
     <% end %>
 

@@ -53,6 +53,15 @@
   background: #D9E6E5;
 }
 
+.user-destroy-link {
+  color: #999999;
+  font-size: smaller;
+  border: 1px solid #999999;
+  border-radius: 4px;
+  padding: 7px 15px;
+  text-align: center;
+}
+
 @media (max-width: 960px) {
   .user-question-form {
     margin-left: 0;
