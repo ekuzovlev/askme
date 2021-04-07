@@ -3,6 +3,7 @@ require 'openssl'
 class User < ApplicationRecord
   VALID_USERNAME = /\A\w+\z/.freeze
   VALID_EMAIL = /.+@.+\..+/i.freeze
+  VALID_COLOR = /\A#\w{6}\z/i.freeze
   ITERATIONS = 20_000
   DIGEST = OpenSSL::Digest.new('SHA256')
 
@@ -26,6 +27,9 @@ class User < ApplicationRecord
 
   validates :avatar_url,
             format: { with: URI::DEFAULT_PARSER.make_regexp, allow_blank: true }
+
+  validates :bg_color,
+            format: { with: VALID_COLOR }
 
   validates :password, presence: true, on: :create
   validates :password, confirmation: true
