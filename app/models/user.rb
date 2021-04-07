@@ -24,6 +24,9 @@ class User < ApplicationRecord
             uniqueness: true,
             format: { with: VALID_EMAIL }
 
+  validates :avatar_url,
+            format: { with: URI::DEFAULT_PARSER.make_regexp, allow_blank: true }
+
   validates :password, presence: true, on: :create
   validates :password, confirmation: true
 
