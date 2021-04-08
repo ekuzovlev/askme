@@ -12,6 +12,12 @@
 
     <div class="question-date">
       <%= l(question.created_at, format: :short) %>
+        <span>| Спросил: </span>
+      <% if author_name(question.author_id).nil? %>
+        <%= 'Аноним' %>
+      <% else %>
+        <%= link_to author_name(question.author_id) , user_path(question.author_id) %>
+      <% end %>
     </div>
   </div>
 
