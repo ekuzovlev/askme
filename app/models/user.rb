@@ -3,7 +3,7 @@ require 'openssl'
 class User < ApplicationRecord
   VALID_USERNAME = /\A\w+\z/.freeze
   VALID_EMAIL = /.+@.+\..+/i.freeze
-  VALID_COLOR = /\A#\w{6}\z/i.freeze
+  VALID_COLOR = /\A#(\h{3}|\h{6})\z/i.freeze
   ITERATIONS = 20_000
   DIGEST = OpenSSL::Digest.new('SHA256')
 
