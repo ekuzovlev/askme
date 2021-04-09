@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :authorize_user, except: [:index, :new, :create, :show]
 
   def index
-    @users = User.all
+    @users = User.all.order(created_at: :asc)
   end
 
   def new
