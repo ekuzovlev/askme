@@ -47,6 +47,8 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
+    reset_session
+
     redirect_to root_path, notice: 'Пользователь стёрт'
   end
 
