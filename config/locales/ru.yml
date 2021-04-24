@@ -1,0 +1,33 @@
+ru:
+  activerecord:
+    models:
+      user: 'Пользователь'
+      question: 'Вопрос'
+
+    attributes:
+      user:
+        email: 'Email'
+        name: 'Имя'
+        username: 'Ник'
+        avatar_url: 'Фотография пользователя'
+        bg_color: 'Цвет шапки'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
+      question:
+        text: 'Вопрос'
+        answer: 'Ответ'
+
+  questions:
+    one: '%{count} вопрос'
+    few: '%{count} вопроса'
+    many: '%{count} вопросов'
+
+  answers:
+    one: '%{count} ответ'
+    few: '%{count} ответа'
+    many: '%{count} ответов'
+
+  unanswered:
+    one: '%{count} безоветный'
+    few: '%{count} безответных'
+    many: '%{count} безоветных'

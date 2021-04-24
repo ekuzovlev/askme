@@ -10,6 +10,8 @@ gem 'puma', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 5.0'
 
+gem 'rails-i18n', '~> 6.0.0'
+
 group :production do
   gem 'pg'
 end
