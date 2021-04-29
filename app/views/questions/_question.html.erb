@@ -2,6 +2,7 @@
   <div class="question-content">
     <div class="question-text text-lead">
       <%= question.text %>
+      <%= render partial: 'hashtags/hashtag', collection: question.hashtags %>
     </div>
 
     <% if question.answer.present? %>

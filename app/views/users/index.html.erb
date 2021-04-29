@@ -10,4 +10,10 @@
       </div>
     </div>
   <% end %>
+
+  <% @hashtags.each do |hashtag| %>
+    <div>
+      <%= hashtag.tag_name %>
+    </div>
+  <% end %>
 </div>

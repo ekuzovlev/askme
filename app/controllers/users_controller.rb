@@ -5,6 +5,8 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all.order(created_at: :asc)
+
+    @hashtags = Hashtag.all
   end
 
   def new
@@ -37,12 +39,13 @@ class UsersController < ApplicationController
 
   def show
     @questions = @user.questions.order(created_at: :desc)
-
     @new_question = @user.questions.build
 
     @questions_count = @questions.count
     @answers_count = @questions.where.not(answer: nil).count
     @unanswered_count = @questions_count - @answers_count
+
+
   end
 
   def destroy
