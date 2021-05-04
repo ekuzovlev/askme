@@ -12,6 +12,8 @@ gem 'webpacker', '~> 5.0'
 
 gem 'rails-i18n', '~> 6.0.0'
 
+gem 'where_exists'
+
 group :production do
   gem 'pg'
 end

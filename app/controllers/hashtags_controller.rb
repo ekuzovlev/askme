@@ -1,31 +1,13 @@
 class HashtagsController < ApplicationController
-  before_action :set_question
   before_action :set_hashtag
 
-  def index
-    @hashtags = Hashtag.all
-  end
-
   def show
-    @hashtag
-  end
-
-  def create
-    
+    @questions = Question.where_exists(:hashtags, id: params[:id])
   end
 
   private
 
   def set_hashtag
-    binding.pry
-    @hashtag = @question.hashtags.find(params[:id])
-  end
-
-  def set_question
-    @question = Question.find(params[:question_id])
-  end
-
-  def hashtag_params
-    params.require(:hashtag).permit(:tag_name)
+    @hashtag = Hashtag.find(params[:id])
   end
 end

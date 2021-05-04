@@ -2,7 +2,6 @@
   <div class="question-content">
     <div class="question-text text-lead">
       <%= question.text %>
-      <%= render partial: 'hashtags/hashtag', collection: question.hashtags %>
     </div>
 
     <% if question.answer.present? %>
@@ -14,11 +13,14 @@
     <div class="question-date">
       <%= l(question.created_at, format: :short) %>
         <span>| Спросил: </span>
-      <% if author_name(question.author_id).nil? %>
+      <% if question.author.nil? %>
         <%= 'Аноним' %>
       <% else %>
-        <%= link_to author_name(question.author_id) , user_path(question.author_id) %>
+        <%= link_to question.author.username , user_path(question.author) %>
       <% end %>
+    </div>
+    <div class="question-hashtag">
+      <%= render partial: 'hashtags/hashtag', collection: question.hashtags.uniq %>
     </div>
   </div>
 

@@ -11,9 +11,23 @@
     </div>
   <% end %>
 
-  <% @hashtags.each do |hashtag| %>
-    <div>
-      <%= hashtag.tag_name %>
+  <div class="content-wrapper buffer-both text-center">
+    <div class="buffer-both">
+      <h1 class="title-medium">Хэштеги</h1>
     </div>
-  <% end %>
+    <div class="users-list-item users-hashtag">
+      <div>
+        <% @hashtags.each do |hashtag| %>
+          <% font_size = Question.where_exists(:hashtags, id: hashtag.id).count + 8 %>
+            <% if font_size < 8 %>
+              <% 8 %>
+            <% elsif font_size > 20 %>
+              <% 20 %>
+            <% end %>
+          <span style="font-size: <%= font_size %>pt"><%= link_to hashtag.tag_name, hashtag %></span>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
+
